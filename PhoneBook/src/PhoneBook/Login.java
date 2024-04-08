@@ -1,11 +1,13 @@
-
+package PhoneBook;
 import javax.swing.*;
 import java.awt.event.*;
 
 public class Login extends JFrame implements ActionListener{
-    private JLabel l1,l2;
-    private JTextField t1,t2;
-    private JButton b;
+    private final JLabel l1;
+    private final JLabel l2;
+    private final JTextField t1;
+    private final JTextField t2;
+    private final JButton b;
 
     Login(){
         this.setDefaultCloseOperation(3);
@@ -37,8 +39,9 @@ public class Login extends JFrame implements ActionListener{
 
     }
 
+    @Override
     public void actionPerformed(ActionEvent e){
-        int f = Integer.valueOf(t1.getText());
+        int f = Integer.parseInt(t1.getText());
         int c = (f-32)*5/9;
         if(e.getSource() == b){
             t2.setText(String.valueOf(c));
